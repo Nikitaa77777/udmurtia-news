@@ -10,6 +10,6 @@ public function index(){
 }
 public function news(){
     $news = News::OrderBy('created_at','desc')->get();
-    return view('admin.news.index',compact('news'));
+    return view('news.index',compact('news'));
 }
 }
