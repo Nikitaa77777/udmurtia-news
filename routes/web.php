@@ -29,3 +29,5 @@ Route::get('/categories', function () {
 // Админ-панель
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/news', [AdminController::class, 'newsIndex']);
+Route::get('/admin/news/create', [AdminController::class, 'create']);
+Route::get('/admin/news/{id}/edit', [AdminController::class, 'edit']);

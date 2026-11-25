@@ -21,18 +21,21 @@
 
     <style>
         .navbar-brand img {
-            height: 55px;
+            height: 40px;
             background: #fff;
-            border-radius: 10px;
-            padding: 4px 8px;
-            margin-right: 12px;
+            border-radius: 8px;
+            padding: 0;
+            margin-right: 10px;
+            display: block;
+            object-fit: contain;
         }
         .navbar-brand {
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
         }
         .accent { color: #e31e24; }
-        footer { background: #212529; color: #adb5bd; padding: 20px 0; margin-top: 40px; }
     </style>
 </head>
 <body>
