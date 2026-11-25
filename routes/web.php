@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicNewsController;
 use App\Http\Controllers\AdminController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,16 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
+
 Route::get('/', [PublicNewsController::class, 'index']);
+Route::view('/about', 'about');
+Route::view('/contacts', 'contacts');
+Route::get('/categories', function () {
+    $categories = Category::withCount('news')->get();
+    return view('categories', compact('categories'));
+});
+// Админ-панель
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/news', [AdminController::class, 'newsIndex']);
